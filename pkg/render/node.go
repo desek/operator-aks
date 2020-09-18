@@ -951,7 +951,7 @@ func (c *nodeComponent) nodeEnvVars() []v1.EnvVar {
 		nodeEnv = append(nodeEnv, v1.EnvVar{Name: "IP_AUTODETECTION_METHOD", Value: v4Method})
 	} else {
 		// IPv4 Auto-detection is disabled.
-		nodeEnv = append(nodeEnv, v1.EnvVar{Name: "IP", Value: "none"})
+		nodeEnv = append(nodeEnv, v1.EnvVar{Name: "IP", Value: "autodetect"})
 	}
 
 	// IPv6 auto-detection and ippool configuration.

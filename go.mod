@@ -13,7 +13,7 @@ require (
 	github.com/onsi/gomega v1.7.0
 	github.com/openshift/api v3.9.1-0.20190927182313-d4a64ec2cbd8+incompatible
 	github.com/openshift/library-go v0.0.0-20190924092619-a8c1174d4ee7
-	github.com/operator-framework/operator-sdk v0.18.1
+	github.com/operator-framework/operator-sdk v0.19.4
 	github.com/pkg/errors v0.8.1
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.4.0
@@ -52,3 +52,4 @@ replace (
 )
 
 replace github.com/operator-framework/operator-lifecycle-manager => github.com/operator-framework/operator-lifecycle-manager v0.0.0-20190605231540-b8a4faf68e36
+replace bitbucket.org/ww/goautoneg => github.com/munnerz/goautoneg v0.0.0-20190414153302-2ae31c8b6b30
