@@ -949,9 +949,12 @@ func (c *nodeComponent) nodeEnvVars() []v1.EnvVar {
 		// IPv4 Auto-detection is enabled.
 		nodeEnv = append(nodeEnv, v1.EnvVar{Name: "IP", Value: "autodetect"})
 		nodeEnv = append(nodeEnv, v1.EnvVar{Name: "IP_AUTODETECTION_METHOD", Value: v4Method})
+	} else if c.cr.Spec.KubernetesProvider == operator.ProviderAKS {
+		// AKS with networkPolicy=azure & networkMode=transparent autodetects Node IP
+		nodeEnv = append(nodeEnv, v1.EnvVar{Name: "IP", Value: "autodetect"})
 	} else {
 		// IPv4 Auto-detection is disabled.
-		nodeEnv = append(nodeEnv, v1.EnvVar{Name: "IP", Value: "autodetect"})
+		nodeEnv = append(nodeEnv, v1.EnvVar{Name: "IP", Value: "none"})
 	}
 
 	// IPv6 auto-detection and ippool configuration.
